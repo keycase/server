@@ -5,4 +5,9 @@ class CatchAllControllerTest < ActionDispatch::IntegrationTest
     get catch_all_log_request_url
     assert_response :success
   end
+
+  test "hitting any paths should get log_request" do
+    get "/foo/bar"
+    assert_response :success
+  end
 end
